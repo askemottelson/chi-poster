@@ -2,8 +2,6 @@ import pickle
 import sys
 import re
 import unicodedata
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import linear_kernel
 
 # never mind sentences with these keywords
 bad_words = [
