@@ -131,3 +131,5 @@ dmypy.json
 # pickled
 *.pkl
 .DS_Store
+db/
+pkls/
