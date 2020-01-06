@@ -1,4 +1,19 @@
+from NP import go_hard
+from proceedings import get_interactions
+from config import *
+
+interactions = get_interactions()
 taken_words = []
+
+
+def nps_from_papers(papers):
+    res = go_hard(papers)
+    clean = [] 
+
+    for paper in res.keys():
+        clean.extend(clean_grammar(res[paper]))
+
+    return clean
 
 def top_np_from_papers(papers):
     res = go_hard(papers)
@@ -19,9 +34,7 @@ def top_np_from_papers(papers):
                 continue
             
             c = int(inter[2])
-            #print "c?", c, highest_grammar_count
             if c > highest_grammar_count[0]:
-                #print "SET HIGHEST", inter
                 highest_grammar_count = (c, gr)
 
     if highest_grammar_count[1]:
@@ -56,3 +69,4 @@ def clean_grammar(grammar):
 
 def scale(val, old_min = 1980., old_max = 2020., new_min = 1.-.03, new_max = base_height + base_offset):
     return ( (val - old_min) / (old_max - old_min) ) * (new_max - new_min) + new_min
+

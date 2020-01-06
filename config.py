@@ -16,3 +16,6 @@ excluded_grammar = {
 interval = 3
 x_social = 0.93
 x_quality = 0.07
+
+base_height = .12
+base_offset = .009

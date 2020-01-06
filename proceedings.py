@@ -82,13 +82,3 @@ def get_proceedings(min_year=1981, max_year=2018):
 
     return data
 
-
-def get_paper(id):
-    p = db.query(Paper).filter(Paper.id == id).one()
-    return MockPaper(p)
-
-
-def get_paper_title(title):
-    p = db.query(Paper).filter(Paper.title.like("%"+title+"%")).all()[0]
-
-    return MockPaper(p)

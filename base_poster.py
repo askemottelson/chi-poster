@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import matplotlib.font_manager as fm
 
+from config import *
+
 futura = "etc/futura medium condensed bt.ttf"
 prop = fm.FontProperties(fname=futura)
 
@@ -17,9 +19,6 @@ red = (210/255., 61/255., 39/255.)
 
 width = 29.7
 height = 42.0
-
-base_height = .12
-base_offset = .009
 
 # make base figure in A3
 fig = plt.figure(figsize=(width, height))
@@ -46,3 +45,6 @@ ax.spines['bottom'].set_color(bg_color)
 ax.spines['top'].set_color(bg_color)
 ax.spines['right'].set_color(bg_color)
 ax.spines['left'].set_color(bg_color)
+
+plt.xlim(0.,1.)
+plt.ylim(0.,1.)
